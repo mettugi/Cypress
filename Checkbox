@@ -1,0 +1,13 @@
+describe('Add/Remove Elements', () => {
+  it('Gets, types and asserts', () => {
+    cy.visit('https://the-internet.herokuapp.com/')
+
+    cy.contains('Checkboxes').click()
+
+    // Should be on a new URL which includes '/checkboxes'
+    cy.url().should('include', '/checkboxes')
+
+    // Check checkbox
+    cy.get('[type="checkbox"]').check()
+  })
+})
