@@ -1,0 +1,24 @@
+describe('Login', () => {
+  it('Gets, types and asserts', () => {
+    cy.visit('https://the-internet.herokuapp.com/')
+
+    cy.contains('Form Authentication').click()
+
+    // Should be on a new URL which includes '/login'
+    //cy.url().should('include', '/login')
+
+    // Input Username
+    cy.get('[id="username"]')
+        .type('tomsmith')
+        .should('have.value', 'tomsmith')
+    // Input Password
+      cy.get('[id="password"]')
+        .type('SuperSecretPassword!')
+        .should('have.value', 'SuperSecretPassword!')
+
+    // Click Login button
+    cy.contains(' Login').type('submit').click()
+
+
+  })
+})
