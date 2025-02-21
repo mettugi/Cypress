@@ -19,6 +19,5 @@ describe('Login', () => {
     // Click Login button
     cy.contains(' Login').type('submit').click()
 
-
   })
 })
